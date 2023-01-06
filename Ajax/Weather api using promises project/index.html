@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather </title>
+</head>
+<body>
+    <input type="text" id="myinput">
+    <button id="mybtn">Fetch It</button>
+    <div id="id1">
+
+    </div>
+    <script>
+        document.getElementById('mybtn').onclick = ()=>{
+            // fetch('url',{})
+            // fetch('api.openweathermap.org/data/2.5/forecast?id=524901&appid={API key}') //when searching by id
+            // fetch('https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}')//when searching by city name
+            // fetch('https://api.openweathermap.org/data/2.5/weather?q=Nashik&appid=3b7c89be4c5941b974b08872ca5a9a33')
+            //to change the temp to degree cel.
+            // fetch('https://api.openweathermap.org/data/2.5/weather?q=Nashik&units=metric&appid=3b7c89be4c5941b974b08872ca5a9a33')
+
+            //now we can make that city name dynamic by taking proper input from user
+            let input = document.getElementById('myinput').value;
+            // console.log(input)//to check weather it is working or not
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input}&units=metric&appid=3b7c89be4c5941b974b08872ca5a9a33`)
+            .then(data=>{
+               return data.json()
+            })
+            .then(data2 =>{
+                // console.log(data2)
+                // console.log(data2.name)
+                // console.log(data2.main.temp)
+                // console.log(data2.weather[0].description)
+
+                document.getElementById("id1").innerHTML = `
+                    <ul>
+                        <li>City : ${data2.name}</li>
+                        <li>temperature : ${data2.main.temp}</li>
+                        <li>Description : ${data2.weather[0].description}</li>
+                    </ul>
+                `
+            })
+        }
+    </script>
+</body>
+</html>

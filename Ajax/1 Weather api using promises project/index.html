@@ -17,14 +17,14 @@
             // fetch('url',{})
             // fetch('api.openweathermap.org/data/2.5/forecast?id=524901&appid={API key}') //when searching by id
             // fetch('https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}')//when searching by city name
-            // fetch('https://api.openweathermap.org/data/2.5/weather?q=Nashik&appid=3b7c89be4c5941b974b08872ca5a9a33')
+            // fetch('https://api.openweathermap.org/data/2.5/weather?q=Nashik&appid=3b7c89be4c5941b974b08872ca5a9a')//obviously ye mera api key galat hai, (hint, add my fav number at the end, by making it 2 times.)
             //to change the temp to degree cel.
-            // fetch('https://api.openweathermap.org/data/2.5/weather?q=Nashik&units=metric&appid=3b7c89be4c5941b974b08872ca5a9a33')
+            // fetch('https://api.openweathermap.org/data/2.5/weather?q=Nashik&units=metric&appid=3b7c89be4c5941b974b08872ca5a9a')//obviously ye mera api key galat hai, (hint, add my fav number at the end, by making it 2 times.)
 
             //now we can make that city name dynamic by taking proper input from user
             let input = document.getElementById('myinput').value;
             // console.log(input)//to check weather it is working or not
-            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input}&units=metric&appid=3b7c89be4c5941b974b08872ca5a9a33`)
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input}&units=metric&appid=3b7c89be4c5941b974b08872ca5a9a`)//obviously ye mera api key galat hai, (hint, add my fav number at the end, by making it 2 times.)
             .then(data=>{
                return data.json()
             })

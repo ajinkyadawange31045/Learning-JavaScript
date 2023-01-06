@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather </title>
+</head>
+<body>
+    <input type="text" id="myinput">
+    <button id="mybtn">Fetch It</button>
+    <div id="id1">
+
+    </div>
+    <script>
+        document.getElementById('mybtn').onclick = async ()=>{ //add async keyword to use await inside function
+            let input = document.getElementById('myinput').value;
+            // console.log(input)//to check weather it is working or not
+            var data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input}&units=metric&appid=3b7c89be4c5941b974b08872ca5a9a`)//obviously ye mera api key galat hai, (hint, add my fav number at the end, by making it 2 times.)
+            var data2 = await data.json()
+            
+                // console.log(data2)
+                // console.log(data2.name)
+                // console.log(data2.main.temp)
+                // console.log(data2.weather[0].description)
+
+                document.getElementById("id1").innerHTML = `
+                    <ul>
+                        <li>City : ${data2.name}</li>
+                        <li>temperature : ${data2.main.temp}</li>
+                        <li>Description : ${data2.weather[0].description}</li>
+                    </ul>
+                `
+           
+        }
+    </script>
+</body>
+</html>

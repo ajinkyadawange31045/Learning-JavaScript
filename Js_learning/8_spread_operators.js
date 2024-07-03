@@ -6,7 +6,7 @@
 // const obj2 ={ 
 //     ...obj1
 // } 
-// // what does this thing do, ... thing first unpacks the object then this thing ,, then we include them in 2 curly braces that pack it again, or make it as object again
+// // what does this thing do, ... thing first unpacks the object then this thing ,, then we include them in 2 curly braces that pack it again, or make it as object again.
 
 // obj1.name = "Radha"
 
